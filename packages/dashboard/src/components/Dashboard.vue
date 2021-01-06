@@ -135,6 +135,37 @@
       </Panel>
     </div>
 
+    <!-- <div class="p-col-12 p-lg-4 contacts">
+      <Panel header="Contacts">
+        <ul>
+          <li>
+            <button class="p-link">
+              <span class="name">Claire Williams</span>
+              <span class="email">clare@primevue.com</span>
+            </button>
+          </li>
+          <li>
+            <button class="p-link">
+              <span class="name">Jason Dourne</span>
+              <span class="email">jason@primevue.com</span>
+            </button>
+          </li>
+          <li>
+            <button class="p-link">
+              <span class="name">Jane Davidson</span>
+              <span class="email">jane@primevue.com</span>
+            </button>
+          </li>
+          <li>
+            <button class="p-link">
+              <span class="name">Tony Corleone</span>
+              <span class="email">tony@primevue.com</span>
+            </button>
+          </li>
+        </ul>
+      </Panel>
+    </div> -->
+
     <div class="p-col-12 p-lg-4">
       <Panel header="Activity" style="height: 100%">
         <div class="activity-header">
