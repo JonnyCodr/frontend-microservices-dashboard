@@ -10,8 +10,12 @@ import Progress from './components/Progress';
 import Header from './components/Header';
 
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
-const AuthLazy = lazy(() => import('./components/AuthApp'));
 const DashboardLazy = lazy(() => import('./components/DashboardApp'));
+
+// Note: if you want to redirect to the auth screen for any attempt at accessing a protected route
+// you must not lazy load the auth component. if you do, then re redirect cannot work becasue its not loaded
+// in memory yet.
+const AuthLazy = lazy(() => import('./components/AuthApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
@@ -41,7 +45,10 @@ export default () => {
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
               </Route>
-              <Route path='/dashboard' component={DashboardLazy}/>
+              <Route path="/dashboard">
+                { !isSignedIn && <Redirect to="/" /> }
+                <DashboardLazy />
+              </Route>
               <Route path="/" component={MarketingLazy} />
             </Switch>
           </Suspense>
